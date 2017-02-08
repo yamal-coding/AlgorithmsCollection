@@ -33,7 +33,7 @@ int binaryToDecimal(string word){
   	int end = size - 1;
   	int res = 0;
 
-  	for (int i = 0; i < size; i++){//TODO: In case that a different char from 1 or 0 is detected, return -1
+  	for (int i = 0; i < size; i++){
   		if (tmp[i] != '1' && tmp[i] != '0')
   			return -1;
   		res += ((int)tmp[i] - 48) * pow(2, end--);
