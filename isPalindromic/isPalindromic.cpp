@@ -8,30 +8,33 @@ using namespace std;
     This algorithm checks if a given word is a palindrome
 */
 
+bool isPalindromic(string word);
+
 int main() {
     string word;
     cout << "Enter a word:";
     getline (cin, word);
   
-    int size = word.length();
-  
-    const char *tmp = word.c_str();
-  
-    int ini = 0, fin = size-1;
-    bool esCapicua = true;
-  
-    while (ini < fin) {  
-        if (tmp[ini++] != tmp[fin--]){
-            esCapicua = false;
-            break;
-        }
-    }
-  
-    if (esCapicua)
+    if (isPalindromic(word))
         cout << "It is a palindrome.\n";
     else
         cout << "It is not a palindrome.\n";
 
   
   return 0;
+}
+
+bool isPalindromic(string word){
+    
+    const char *tmp = word.c_str();
+  
+    int ini = 0, fin = word.length() - 1;
+  
+    while (ini < fin) {  
+        if (tmp[ini++] != tmp[fin--]){
+            return false;
+        }
+    }
+    
+    return true;
 }
